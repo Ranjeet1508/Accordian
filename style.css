@@ -1,0 +1,50 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.accordion .contentBx{
+    max-width: 800px;
+}
+
+.accordion .contentBx .lable{
+    margin: 10px 0;
+    padding: 10px 20px;
+    position: relative;
+    background-color: rgb(163, 198, 228);
+    cursor: pointer;
+}
+
+.accordion .contentBx .lable::before{
+    content: "+";
+    position: absolute;
+    font-size: 1.5rem;
+    font-weight: 900;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.accordion .contentBx.active .lable::before{
+    content: "-";
+}
+
+.accordion .contentBx .content{
+    position: relative;
+    padding: 0 10px;
+    height: 0;
+    overflow: hidden;
+    transition: all 0.5s;
+    overflow-y: auto;
+}
+
+.accordion .contentBx.active .content{
+    height: fit-content;
+}
